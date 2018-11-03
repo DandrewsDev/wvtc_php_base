@@ -6,7 +6,7 @@ services:
 before_install:
   - docker build -t wvtc/wvtc-php-base .
   - docker tag wvtc/wvtc-php-base wvtc/wvtc-php-base:lastest
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --p-stdin
   
 script:
   - exec docker_push
