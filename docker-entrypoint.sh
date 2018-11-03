@@ -12,13 +12,13 @@ if [ -f /run/apache2/apache2.pid ]; then
 fi
 
 # Allow the Apache docroot to be overridden.
-APACHE_DOCROOT_DIR="${APACHE_DOCROOT_DIR:-/var/www/html}"
+APACHE_DOCROOT_DIR="${APACHE_DOCROOT_DIR:-/var/www/wvtc}"
 if [ -n "$APACHE_DOCROOT_DIR" ]; then
      sed -i 's@^\s*DocumentRoot.*@'"        DocumentRoot ${APACHE_DOCROOT_DIR}"'@'  /etc/apache2/sites-available/000-default.conf
 fi
 
 # Allow the site name to be overriden.
-APACHE_SITE_NAME="${APACHE_SITE_NAME:-docker.test}"
+APACHE_SITE_NAME="${APACHE_SITE_NAME:-wvtc.net}"
 if [ -n "$APACHE_SITE_NAME" ]; then
      sed -i 's@^\s*ServerName.*@'"        ServerName ${APACHE_SITE_NAME}"'@'  /etc/apache2/sites-available/000-default.conf
 fi

@@ -1,13 +1,5 @@
 FROM ubuntu:xenial
 
-################################################################################
-#                                                                              #
-#   THIS CONTAINER IS FOR EDUCATIONAL USE ONLY!                                #
-#                                                                              #
-#   Never use this container for running production workloads!                 #
-#                                                                              #
-################################################################################
-
 # Update the package manager, then install packages.
 RUN apt-get update && \
     apt-get install -y \
