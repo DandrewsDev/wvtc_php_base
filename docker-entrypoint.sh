@@ -12,7 +12,7 @@ if [ -f /run/apache2/apache2.pid ]; then
 fi
 
 # Allow the Apache docroot to be overridden.
-APACHE_DOCROOT_DIR="${APACHE_DOCROOT_DIR:-/var/www/web"
+APACHE_DOCROOT_DIR="${APACHE_DOCROOT_DIR:-/var/www/web}"
 if [ -n "$APACHE_DOCROOT_DIR" ]; then
      sed -i 's@^\s*DocumentRoot.*@'"        DocumentRoot ${APACHE_DOCROOT_DIR}"'@'  /etc/apache2/sites-available/000-default.conf
 fi
